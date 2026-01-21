@@ -330,9 +330,9 @@ export default function Home() {
           Sanket Jadhav.
         </h1>
         
-        {/* Scrollable Links for Mobile */}
-        <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar">
-          <div className="flex justify-center md:justify-end space-x-8 text-sm font-medium whitespace-nowrap px-4 md:px-0 text-gray-300">
+        {/* Scrollable Links for Mobile - SCROLLBAR FORCED HIDDEN HERE */}
+        <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex justify-start md:justify-end space-x-8 text-sm font-medium whitespace-nowrap px-4 md:px-0 text-gray-300">
             <Link href="#about" className="hover:text-white hover:scale-105 transition duration-300">About</Link>
             <Link href="#experience" className="hover:text-white hover:scale-105 transition duration-300">Experience</Link>
             <Link href="#education" className="hover:text-white hover:scale-105 transition duration-300">Education</Link>
@@ -544,12 +544,15 @@ export default function Home() {
           
           {/* Project 1 */}
           <div className="group relative grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10 hover:border-blue-500/30 transition duration-500 hover:bg-white/[0.07]">
-            <div className="aspect-video bg-black/50 rounded-xl overflow-hidden border border-white/5 group-hover:scale-[1.02] transition duration-500 relative">
-              {/* Abstract Graphic Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-purple-900/40"></div>
-              <div className="w-full h-full flex items-center justify-center relative z-10">
-                 <span className="text-blue-200 font-mono text-center px-4 font-bold text-lg">Blockchain<br/>System Architecture</span>
-              </div>
+            {/* Image Side */}
+            <div className="aspect-video bg-gray-900 rounded-2xl overflow-hidden border border-white/10 group-hover:border-blue-500/50 shadow-2xl relative">
+               {/* ⚠️ Ensure 'project1.jpg' is in your public folder */}
+               <Image 
+                 src="/project1.jpg" 
+                 alt="Medical Data Assistant" 
+                 fill
+                 className="object-cover hover:scale-105 transition duration-700"
+               />
             </div>
             
             <div>
@@ -576,12 +579,15 @@ export default function Home() {
 
           {/* Project 2 */}
           <div className="group relative grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10 hover:border-orange-500/30 transition duration-500 hover:bg-white/[0.07]">
-            {/* Mobile: Image First */}
-            <div className="aspect-video bg-black/50 rounded-xl overflow-hidden border border-white/5 group-hover:scale-[1.02] transition duration-500 md:order-2 relative">
-               <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 to-red-900/40"></div>
-               <div className="w-full h-full flex items-center justify-center relative z-10">
-                 <span className="text-orange-200 font-mono text-center px-4 font-bold text-lg">Spring Boot<br/>Backend System</span>
-              </div>
+            {/* Image Side - Mobile First Logic handled by grid order if needed, but standard is OK here */}
+            <div className="aspect-video bg-gray-900 rounded-2xl overflow-hidden border border-white/10 group-hover:border-orange-500/50 shadow-2xl md:order-2 relative">
+               {/* ⚠️ Ensure 'project2.jpg' is in your public folder */}
+               <Image 
+                 src="/project2.jpg" 
+                 alt="Online Food Order System" 
+                 fill
+                 className="object-cover hover:scale-105 transition duration-700"
+               />
             </div>
             
             <div className="md:order-1">

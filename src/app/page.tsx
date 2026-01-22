@@ -159,10 +159,8 @@ export default function Home() {
       {/* --- TECH STACK SECTION (Grid Design) --- */}
       <section className="py-24 px-4 bg-[#0a0a0a]/50 border-y border-white/5">
         <div className="max-w-5xl mx-auto">
-          <h3 className="text-center text-gray-400 uppercase tracking-widest text-sm mb-16 font-semibold">
-            Technical Arsenal
-          </h3>
-          
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Technical Arsenal</h2>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { title: "Languages", tech: "Python, Java, SQL, Solidity", color: "hover:border-blue-500/50 hover:shadow-blue-500/20" },
